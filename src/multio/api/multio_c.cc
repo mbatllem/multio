@@ -88,7 +88,6 @@ struct multio_metadata_t : public multio::message::Metadata {
 
 
 namespace {
-
 // Template magic to provide a consistent error-handling approach
 
 int innerWrapFn(std::function<void()> f) {

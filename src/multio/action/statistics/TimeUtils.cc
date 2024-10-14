@@ -18,6 +18,14 @@ eckit::DateTime prevDateTime(const message::Message& msg, const StatisticsConfig
 
 
 eckit::DateTime currentDateTime(const message::Message& msg, const StatisticsConfiguration& cfg) {
+
+    eckit::Second stepTime = static_cast<eckit::Second>(cfg.step() * cfg.timeStep());
+    
+    // Print the values of cfg.step() and cfg.timeStep()
+    std::cout << "cfg.step(): " << cfg.step() << std::endl;
+    std::cout << "cfg.timeStep(): " << cfg.timeStep() << std::endl;
+    std::cout << "Result of step() * timeStep(): " << stepTime << std::endl;
+
     return epochDateTime(msg, cfg) + static_cast<eckit::Second>(cfg.step() * cfg.timeStep());
 }
 
